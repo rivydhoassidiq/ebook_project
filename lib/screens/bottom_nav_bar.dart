@@ -1,4 +1,8 @@
+import 'package:ebook_project/cart/cart.dart';
+import 'package:ebook_project/home/home.dart';
+import 'package:ebook_project/save/save.dart';
 import 'package:ebook_project/theme.dart';
+import 'package:ebook_project/user/user.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -10,6 +14,13 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
+
+  final _screens = [
+    const HomePage(),
+    const SavePage(),
+    const CartPage(),
+    const UserPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +92,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
     return Scaffold(
       bottomNavigationBar: customBottomNav(),
+      body: Stack(
+        children: _screens
+            .asMap()
+            .map((i, screen) => MapEntry(
+                i,
+                Offstage(
+                  offstage: _selectedIndex != i,
+                  child: screen,
+                )))
+            .values
+            .toList(),
+      ),
     );
   }
 }

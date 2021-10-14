@@ -9,8 +9,10 @@ Color greyColor = const Color(0xFFBDBDBD);
 Color greyColorSearchField = const Color(0xFFF8F8F8);
 Color greyColorInfo = const Color(0xFFF7F7F7);
 Color greenColor = const Color(0xFF098B5C);
-Color greenColorRecentBook = const Color(0xFFAFAFAF);
+Color greyColorRecentBook = const Color(0xFFAFAFAF);
 Color dividerColor = const Color(0xFF6B6B6B);
+Color borderColorRecentBook = const Color(0xFFF3F3F3);
+Color transparentColor = Colors.transparent;
 
 // SEMIBOLD TEXT
 TextStyle semiBoldText20 =
